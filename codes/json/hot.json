@@ -1,0 +1,49 @@
+[
+	{
+		"num": "01",
+		"name": "放逐之刃",
+		"Qb": "45.00",
+		"many": "42.75",
+		"img": "../img/hot_1.jpg"
+	}, {
+		"num": "02",
+		"name": "盲   僧",
+		"Qb": "30.00",
+		"many": "28.50",
+		"img": "../img/hot_2.jpg"
+	}, {
+		"num": "03",
+		"name": "影流之主",
+		"Qb": "45.00",
+		"many": "42.75",
+		"img": "../img/hot_3.png"
+	}, {
+		"class": "gray",
+		"num": "04",
+		"name": "探险家",
+		"Qb": "30.00",
+		"many": "28.50",
+		"img": "../img/hot_4.jpg"
+	}, {
+		"class": "gray",
+		"num": "05",
+		"name": "无双剑姬",
+		"Qb": "45.00",
+		"many": "42.75",
+		"img": "../img/hot_5.png"
+	}, {
+		"class": "gray",
+		"num": "06",
+		"name": "疾风剑豪",
+		"Qb": "45.00",
+		"many": "42.75",
+		"img": "../img/hot_6.png"
+	}, {
+		"class": "gray",
+		"num": "07",
+		"name": "暗夜猎手",
+		"Qb": "30.00",
+		"many": "28.50",
+		"img": "../img/hot_7.jpg"
+	}
+]
