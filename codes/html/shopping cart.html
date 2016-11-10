@@ -9,18 +9,34 @@
 		</style>
 		<script src="../js/jquery-1.11.3.js"></script>
 		<script type = "text/javascript" src = "../js/jquery-1.10.1.min.js"></script>
+		<script src="../js/jquery.cookie.js"></script>
 		<script src = "../json/recommended.json"></script>
 		<script src = "../js/index.js"></script>
-		<script >$(function(){	
-			$(".title_box ul a").mouseenter(function(){
-			$(".title_box ul a").attr("class",""),
-			$(this).attr("class","focus")
-    		if($(this).parent().index() == 0){$("#cart_other_tab_0").css("display","block");
-    		$("#cart_other_tab_1").css("display","none")}
-    		if($(this).parent().index() == 1){$("#cart_other_tab_1").css("display","block");
-    	$("#cart_other_tab_0").css("display","none")}
+		<script >
+			$(function(){	
+				$(".title_box ul a").mouseenter(function(){
+				$(".title_box ul a").attr("class",""),
+				$(this).attr("class","focus")
+	    		if($(this).parent().index() == 0){$("#cart_other_tab_0").css("display","block");
+	    		$("#cart_other_tab_1").css("display","none")}
+	    		if($(this).parent().index() == 1){$("#cart_other_tab_1").css("display","block");
+	    	$("#cart_other_tab_0").css("display","none")}
+				});
+			})
+		</script>
+		<script>
+			$(function(){
+			$(".a_load").click(function(){
+			$(".web_login").css("left",($(window).width()-$(".web_login").outerWidth())/2)
+			$(".web_login").css("top",($(window).height()-$(".web_login").outerHeight())/2)
+			$(".web_login").css("display","block")
+			$(".box_web_login").css("display","block")
 			});
-		})
+			$(".web_login .header .close").click(function(){
+				$(".box_web_login").css("display","none")
+				$(".web_login").css("display","none")
+				});	
+		 	})
 		</script>
 	</head>
 	<body>
@@ -265,7 +281,7 @@
 						<li><a href="http://10.9.160.131/codes/html/#" target="_self" link="/lol/index.shtml?ADTAG=innercop.lol.SY.sy">首页</a>
 						<span class="box2_line"></span>
 						</li>
-						<li><a href="/lol/list/shoppinglist.shtml?ADTAG=innercop.lol.SY.shoppinglist" target="_self" link="/lol/list/shoppinglist.shtml?ADTAG=innercop.lol.SY.shoppinglist" class = "goods-list">商品列表</a>
+						<li><a href="goods.html" target="_self" link="/lol/list/shoppinglist.shtml?ADTAG=innercop.lol.SY.shoppinglist" class = "goods-list">商品列表</a>
 						<span class="box2_line"></span>
 						</li>
 						<li><a href="/mall/actlist.shtml?flag=lol&amp;ADTAG=innercop.lol.SY.actlist" target="_blank" link="/mall/actlist.shtml?flag=lol&amp;ADTAG=innercop.lol.SY.actlist">活动专区</a>
@@ -288,7 +304,6 @@
 
 				</div>
 			</div>
-			
 			<div class = "location">
 				您现在的位置：
 				<a href="/lol/">英雄联盟</a>&gt;<a href="/lol/list/shoppinglist.shtml">购物车</a>
@@ -299,18 +314,59 @@
                 		<thead>
                 			<tr style="border-bottom: 1px dotted #DEDFDE">
                     			<th scope="col" width="17px"></th>
-                    			<th scope="col">商品名称</th>
+                    			<th scope="col" width="247px">商品名称</th>
                     			<th width="150" scope="col">赠送</th>
-                    			<th scope="col">类型</th>
-                    			<th scope="col">单价</th>
-                    			<th scope="col">返点</th>
-                    			<th scope="col">期限</th>
+                    			<th scope="col" width="54px">类型</th>
+                    			<th scope="col" width="106px">单价</th>
+                    			<th scope="col" width="47px">返点</th>
+                    			<th scope="col" width="47px">期限</th>
                     			<th scope="col" width="110px">数量</th>
-                    			<th scope="col">优惠</th>
-                    			<th scope="col">小计</th>
-                    			<th scope="col">操作</th>
+                    			<th scope="col" width="67px">优惠</th>
+                    			<th scope="col" width="107px">小计</th>
+                    			<th scope="col" width="48px">操作</th>
                 			</tr>
                 		</thead>
+                		<tbody id="cart_list" style="display: table-row-group;" height="56px">
+                			<tr id="tr_0" class="gift-items">
+                    			<th scope="row"></th>
+                    			<td style="text-align:left">
+                        			<a href="item/1386.shtml" target="_blank" width="44px">
+                        				<img src="http://ossweb-img.qq.com/images/gameshop/lol/images/thumb/3_1392.jpg" width="39" height="39" alt="召唤仪式锅图标">
+                        			</a>
+                        			<a href="item/1386.shtml" target="_blank" class="link_g">召唤仪式锅图标</a>
+                    			</td>
+                    			<td class="font_red">
+                        			无
+                    			</td>
+                    			<td>
+                    				<span class=" m_r_5">道具</span>
+                    			</td>
+                    			<td class="font_red">
+                    				<span class=" m_r_5">10.00</span>
+                    				Q币
+                    			</td>
+                    			<td>0.00</td>
+                    			<td>永久</td>
+                    			<td>
+                        			<a href="javascript:void(0);" iseqid="1386" class="cart_minus ht">减</a>
+                        			<input name="good_num" type="text" class="cart_amount tac" value="1">
+                        			<a href="javascript:void(0);" iseqid="1386" class="cart_plus ht">加</a>
+                    			</td>
+                    
+                    			<td>
+                    				<span class="ht font_red">无优惠</span>
+                    			</td>
+                    			<td class="font_red">
+                    				<span class=" m_r_5">10.00</span>Q币
+                    			</td>
+                    			<td class="gift-itemstd">
+                        			<a href="#" seq="1386" sgoodsname="召唤仪式锅图标" piclink="http://ossweb-img.qq.com/images/gameshop/lol/images/thumb/3_1392.jpg" url="1386.shtml" class="collect_btn clear font_blue">关注
+                        			</a>
+                        			<a href="#" seq="1386" class="del_btn clear font_blue">删除
+                        			</a>
+                    			</td>
+                			</tr>
+                		</tbody>
             		</table>
             		<div class="cart_total_box clear">
                 		<p class="l" style="margin-left:17px">
@@ -325,7 +381,8 @@
             		</div>
             		<div id="yhq_info" class="cart_payment_box cart_payment_box_none m_t_16 clear">
             			<div class="title05 m_t_16">
-               				<h2>您的优惠信息</h2>
+               				<h2>您的优惠信息
+               				</h2>
             			</div>
             			<div class="c discount_info">
                 			<div id="tab_gwd" class="tcon" style="">
@@ -337,7 +394,8 @@
                 			<div id="bcon_gwd" class="bcon" style="display:none;">
                     			<div class="gwd">
                     				<p>购物点可用余额：
-                    					<b id="remain_gwd" class="font_red gwd_num">0</b>
+                    					<b id="remain_gwd" class="font_red gwd_num">0
+                    					</b>
                     				</p>
 
                         			<p class="c">
@@ -360,13 +418,61 @@
                             <span class="label">选择游戏角色：</span>
                 			<ul>
                     			<li>
-                        			<select style="display:none;" name="area" id="area">
+                        			<!--<select name="area" id="area">
                             			<option value="">请选择大区</option>
+                        			</select>-->
+                        			<select name="iZone" id="iZone" onchange="changeEvent(this);">
+                            			<option value="">请选择大区</option>
+                            			<option value="1">
+                            				艾欧尼亚 电信
+                            			</option>
+                            			<option value="2">
+                            				比尔吉沃特   
+                            				网通
+                            			</option>
+                            			<option value="3">
+                            				祖安 电信
+                            			</option>
+                            			<option value="4">
+                            				诺克萨斯 电信
+                            			</option>
+                            			<option value="5">
+                            				德玛西亚 网通
+                            			</option>
+                            			<option value="6">
+                            				班特尔城 电信
+                            			</option>
+                            			<option value="7">
+                            				皮尔特沃夫   电信
+                            			</option>
+                            			<option value="8">
+                            				战争学院   电信
+                            			</option>
+                            			<option value="9">
+                            				弗莱尔卓德   网通
+                            			</option>
+                            			<option value="10">
+                            				巨神峰   电信
+                            			</option>
+                            			<option value="11">雷瑟守备 电信</option>
+                            			<option value="12">无畏先锋 网通</option>
+                            			<option value="13">裁决之地 电信</option>
+                            			<option value="14">黑色玫瑰 电信</option>
+                            			<option value="15">暗影岛 电信</option>
+                            			<option value="16">钢铁烈阳 电信</option>
+                            			<option value="17">恕瑞玛 网通</option>
+                            			<option value="18">水晶之痕 电信</option>
+                            			<option value="19">均衡教派 电信</option>
+									    <option value="20">扭曲丛林 网通</option>
+									    <option value="21">教育网专区</option>
+									    <option value="22">影流 电信</option>
+									    <option value="23">守望之海 电信</option>
+									    <option value="24">征服之海 电信</option>
+									    <option value="25">卡拉曼达 电信</option>
+									    <option value="26">巨龙之巢 网通</option>
+									    <option value="27">皮城警备 电信</option>
                         			</select>
-                        			<select style="display:none" name="iZone" id="iZone" onchange="changeEvent(this);">
-                            			<option value="">请选择服务器</option>
-                        			</select>
-                        			<select style="display:none" name="iRoleId" id="iRoleId">
+                        			<select name="iRoleId" id="iRoleId">
                             			<option value="">请选择角色</option>
                         			</select>
                         			<span id="error_info" class="font_red"></span>
@@ -427,10 +533,8 @@
                 			<li>
                 				<a href="javascript:void(0);" id="last_attend" class="">最近关注</a>
                 			</li>
-                <!-- <li><a href="javascript:void(0);">猜你喜欢</a></li> -->
             			</ul>
         		    </div>
-        <!-- 本周热门 -->
         			<div id="cart_other_tab_0">
             			<div class="title_box_dl c" id="cnxh_list" style="height:110px;overflow:hidden">	<dl pos="71">    
             					<dt>     
@@ -505,14 +609,10 @@
             				</dl>
             			</div>
         			</div>
-        		
-        <!--最近关注-->
-        
         			<div id="cart_other_tab_1">
             			<div class="title_box_dl c">
             			</div>
         			</div>
-        
     			</div>
         	</div>
 			<div class = "service">
@@ -595,6 +695,53 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class = "box_web_login">	
+		</div>
+		<div class = "web_login">
+			<div class="header">  
+				<a class="close" id="close" href="javascript:void(0);" title="关闭" tabindex="14">	
+				</a>  
+			</div>
+			<div class="tips" id="tips">  
+				<div class="title" id="title_2">帐号密码登录</div> 
+				推荐使用
+				<a class="switch_btn_focus link_tips" hidefocus="true" id="switcher_qlogin" href="javascript:void(0);" tabindex="7">快速安全登录</a>
+				，防止盗号。 
+			</div>
+			<div class="login_form">
+				<form id="loginform" autocomplete="off" name="loginform" action="" method="post" target="_self" style="margin:0px">
+					<div class="uinArea" id="uinArea">
+						<label class="input_tips" id="uin_tips" for="u" data-onlyqq="QQ号码" style="display: block;"></label>
+						<div class="inputOuter">
+							<input type="text" class="inputstyle" id="u" name="u" value="支持QQ号/邮箱/手机号登录" onfocus="this.value=='支持QQ号/邮箱/手机号登录'&&(this.value='')" onblur="this.value==''&&(this.value='支持QQ号/邮箱/手机号登录')" tabindex="1"> 
+							<a class="uin_del" id="uin_del" href="javascript:void(0);" style="display: block;"></a>
+						</div>
+					</div>
+					<div class="pwdArea" id="pwdArea">
+						<label class="input_tips" id="pwd_tips" for="p" style="display: block;">密码</label>
+						<div class="inputOuter">
+							<input type="password" class="inputstyle password" id="p" name="p"  maxlength="16" tabindex="2">
+						</div>
+						<div class="lock_tips" id="caps_lock_tips" style="display: none;">
+							<span class="lock_tips_row">	
+							</span> 
+							<span>大写锁定已打开</span>
+						</div>
+					</div>
+					<div class="submit">
+						<a class="login_button" href="javascript:void(0);" hidefocus="true">
+							<input type="submit" tabindex="6" value="登 录" class="btn" id="login_button">
+						</a>
+					</div>
+				</form>
+			</div>
+			<div class="bottom" id="bottom_web" style="display: block;">  
+				<a href="http://ptlogin2.qq.com/ptui_forgetpwd" class="link" id="forgetpwd" target="_blank">忘了密码？</a>  
+				<span class="dotted">|</span> 
+				<a href="login.html" class="link" target="_blank">注册新帐号</a>  <span class="dotted">|</span> 
+				<a class="link" id="feedback_web" href="http://support.qq.com/write.shtml?guest=1&amp;fid=713&amp;SSTAG=hailunna" target="_blank">意见反馈</a>  
+			</div>	
 		</div>
 	</body>
 	<script type="text/javascript">

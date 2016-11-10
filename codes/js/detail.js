@@ -96,4 +96,3 @@ function ajaxList(obj, eq, path){
 
 
 
-
