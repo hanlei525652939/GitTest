@@ -39,7 +39,7 @@ a:hover{ text-decoration:none;}
   z-index:20;}
 .lol_logo{float:left;margin:10px 0 0 15px;}
 .login{float:left;margin:10px 0 0 115px;}
-.login .a_load{color:#325E7F;}    
+.login .a_load{color:#325E7F;cursor:pointer;}    
 .login .a_load:hover{color:red;}
 .top_link{float:left;
          width:280px;
@@ -380,7 +380,7 @@ a:hover{ text-decoration:none;}
                font-weight: bold;
                color:#FEF4F4;
                line-height: 39px;}
-.menu_box2 li .goods-list{background: url(../img/line_nav.png);}
+
 .menu_box2 li a:hover{background: url(../img/line_nav.png);}
 
 .menu_box2 .box2_line {height: 39px;
@@ -492,14 +492,14 @@ a:hover{ text-decoration:none;}
 .box_right .goods_img {
     float: left;
 }
-.goods_img_bg {background: url(../images/nox.jpg) no-repeat center;
+.goods_img_bg {background: url(../img/nox.jpg) no-repeat center;
     width: 228px;
     height: 238px;
     vertical-align: middle;
     
     text-align: center;
     position: relative;}
-.btn_goods_zoom {background: url(../images/comm_ico.png) no-repeat;
+.btn_goods_zoom {background: url(../img/comm_ico.png) no-repeat;
     width: 24px;
     height: 24px;
     background-position: 0 -408px;
@@ -522,20 +522,10 @@ a:hover{ text-decoration:none;}
     width: 94px;
     background-color: #f3f3f3;
     padding-left: 21px;
-    margin-top: 45px;
+    margin-top: 2px;
 }
 
-.btn_goods_share {background: url(../images/comm_ico.png) no-repeat 0 -438px;
-
-    height: 25px;
-    display: block;
-    line-height: 27px;
-    width: auto;
-    color: #0079bd;
-    text-indent: 27px;
-    background-color: transparent;
-}
-.btn_goods_fav {background: url(../images/comm_ico.png) no-repeat 0 -466px;
+.btn_goods_share {background: url(../img/comm_ico.png) no-repeat 0 -438px;
 
     height: 25px;
     display: block;
@@ -545,10 +535,22 @@ a:hover{ text-decoration:none;}
     text-indent: 27px;
     background-color: transparent;
 }
+.btn_goods_fav {background: url(../img/comm_ico.png) no-repeat 0 -466px;
+
+    height: 25px;
+    display: block;
+    line-height: 27px;
+    width: auto;
+    color: #0079bd;
+    text-indent: 27px;
+    background-color: transparent;
+}
+.goodsbuy_box .dl_price{float:left;}
 .goodsbuy_box dl {
     display: block;
     clear: both;
 }
+
 .goodsbuy_box {float: left;
     padding-left: 35px;}
 .goodsbuy_box .goods_name {
@@ -755,7 +757,7 @@ a:hover{ text-decoration:none;}
 
 
 /*放大镜*/
- .goods_img_bg img{margin:-42px 55px 0 ;
+ .goods_img_bg img{
     width: 100%;
     height: 100%;
   }
@@ -763,8 +765,8 @@ a:hover{ text-decoration:none;}
     width: 121px;
     height: 220px;
     position: relative;
-    left: 00px;
-    top: 50px;
+    left: 55px;
+    top: 10px;
   }
   #s_box .position_box{
     width: 100px;
@@ -791,7 +793,7 @@ a:hover{ text-decoration:none;}
     overflow: hidden;
     position: relative;
     left: 230px;
-    top: -150px;
+    top: -210px;
     display: none;
   }
   #b_box_all{
@@ -888,3 +890,144 @@ a:hover{ text-decoration:none;}
                    margin-top:16px;}
 .footer a{color:#000000;}        
 .footer a:hover{text-decoration: underline;}
+/*登录框的隐藏与现实*/
+.box_web_login{width:100%;height:100%;opacity: 0.5;position: fixed;z-index: 999;background: white;top:0;display: none;}
+.web_login {width:622px;height:368px;
+    margin: 0 auto;
+    border: 2px solid #eee;
+    position:fixed;
+    background: white;
+    opacity: 1;
+    z-index: 1000;}
+.web_login .header {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-family: "微软雅黑";
+    z-index: 1;
+}
+.header .close {
+    width: 47px;
+    height: 20px;
+    float: right;
+    background: url(../img/icon_3_tiny.png) -221px -126px no-repeat;
+  }
+.header .close:hover{background: url(../img/icon_3_tiny.png) -221px -152px no-repeat;
+}
+.web_login .tips {font-family: helvetica,arial,微软雅黑,华文黑体;
+    position: relative;
+    margin: 0 auto 36px;
+    z-index: 11;
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    font-weight: bold;}
+.web_login .title {margin-top: 45px;
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 16px;
+}
+.link_tips {
+    color: #3481cf;
+}
+.link_tips:hover{text-decoration: underline;} 
+.web_login .login_form {
+    width: 272px;
+    margin: 0 auto;
+}
+.web_login form {display: block;}
+.web_login .uinArea {
+    height: 55px;
+    position: relative;
+    z-index: 10;
+}
+.web_login .input_tips{
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #aaa;
+    cursor: text;
+}
+.web_login .inputOuter {
+    width: 272px;
+    height: 42px;
+    background: url(../img/icon_3_tiny.png) -1px -1px no-repeat;
+}
+.web_login .inputstyle {
+    width: 258px;
+    position: relative;
+    top: 2px;
+    left: 2px;
+    height: 18px;
+    padding: 10px 0 10px 10px;
+    line-height: 18px;
+    border: none;
+    background: 0 0;
+    color: #AAA;
+    font-family: Verdana,Tahoma,Arial;
+    font-size: 16px;
+}
+.web_login .pwdArea {
+    height: 55px;
+    position: relative;
+    z-index: 3;
+}
+.web_login .input_tips{
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #aaa;
+    cursor: text;
+}
+.web_login .inputOuter {
+    width: 272px;
+    height: 42px;
+    background: url(../img/icon_3_tiny.png) -1px -1px no-repeat;
+}
+.web_login .submit {
+    position: relative;
+    height: 40px;
+    background-color: #86ce2f;
+}
+.web_login .login_button {
+    position: absolute;
+    left: 0;
+    outline: 0;
+    width: 100%;
+}
+.web_login .login_button .btn {
+    width: 100%;
+    height: 40px;
+    line-height: 35px;
+    border: none;
+    font-size: 17px;
+    font-weight: 400;
+    font-family: "Microsoft Yahei","微软雅黑",SimHei,"黑体","Hiragino Sans GB",STHeiTi,sans-serif;
+    color: #fff;
+    background: 0 0;
+    cursor: pointer;
+}
+.web_login .bottom {
+    height: 16px;
+    margin-bottom: 8px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: right;
+    font-size: 12px;
+}
+.web_login .bottom .link {
+    color: #666;
+}
+.web_login .bottom .link:hover{text-decoration: underline;}
+.web_login .bottom .dotted {
+    color: #bfbfbf;
+    margin: 0 5px;
+}
